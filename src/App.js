@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
-import HelloWorld from './components/HelloWorld'
+import Board from './components/Board.jsx'
 
 class App extends Component {
   render() {
-    return <HelloWorld />
+    return (
+      <>
+        <h1>Minesweeper</h1>
+        <Board />
+      </>
+    )
   }
 }
 
