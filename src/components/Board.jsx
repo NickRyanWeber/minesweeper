@@ -25,10 +25,7 @@ class Board extends Component {
         col: y
       }
     )
-    console.log(x, y)
-    console.log(resp)
-    const _board = resp.data.board
-    this.setState({ board: _board })
+    this.setState({ board: resp.data.board })
   }
 
   rightClickAPI = async (x, y) => {
@@ -39,8 +36,7 @@ class Board extends Component {
         col: y
       }
     )
-    const _board = resp.data.board
-    this.setState({ board: _board })
+    this.setState({ board: resp.data.board })
   }
 
   newGame = async () => {
