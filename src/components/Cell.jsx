@@ -9,14 +9,19 @@ export class Cell extends Component {
     bomb: <FontAwesomeIcon icon={faBomb} />,
     flag: <FontAwesomeIcon icon={faFlag} />
   }
-  // if (this.props.show === '-') {
-  //   this.props.
-  // }
+
+  setCellDisplay() {
+    let _display = this.props.show
+    if (this.props.show === ' ') {
+      _display = 'space'
+    } else if (this.props.show === '_') {
+      _display = 'empty'
+    }
+    this.setState({ display: _display })
+  }
 
   componentDidMount() {
-    this.setState({
-      display: this.props.show
-    })
+    this.setCellDisplay()
   }
 
   render() {
@@ -28,7 +33,7 @@ export class Cell extends Component {
           e.preventDefault()
         }}
       >
-        <p>{this.props.show}</p>
+        <p>{this.state.display}</p>
       </td>
     )
   }
